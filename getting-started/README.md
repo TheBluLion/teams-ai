@@ -22,4 +22,16 @@ If you are migrating your existing bot, we recommend starting with the respectiv
 - [js](./js/00.MIGRATION.md)
 - [dotnet](./dotnet/00.MIGRATION.md)
 
+## Using this sample with Azure OpenAI
+
+To use this sample with Azure OpenAI, references to OpenAIPlanner should be replaced with AzureOpenAIPlanner
+When creating an AzureOpenAIPlanner component, the property endpoint is expected and should be populated with the Azure Open AI endpoint shown in the Azure portal
+
+```const planner = new AzureOpenAIPlanner({
+    apiKey: process.env.OPENAI_API_KEY,
+    defaultModel: 'text-davinci-003',
+    logRequests: true,
+    endpoint: 
+});
+```
 Otherwise, please feel free to browse other pages, including Concepts and Prompt Injection.
